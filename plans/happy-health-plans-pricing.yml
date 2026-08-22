@@ -1,0 +1,33 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.happysleep.com/select-billing-method
+description: >-
+  Happy Health publishes consumer product pricing for the Happy Sleep home sleep test, but no
+  API plans, developer tiers, quotas or usage pricing of any kind — because it publishes no API.
+plan_count: 0
+api_plans: []
+note: >-
+  The pricing that IS published is retail healthcare pricing, not an API plan: self-pay $396
+  (from $499, "20% OFF"), or insurance billing with $0 due today and copay determined at
+  verification, with 6-12 month interest-free instalments from about $33/mo. It covers up to
+  five nights of at-home sleep testing, shipping both ways, virtual visits with a
+  board-certified sleep doctor, and a diagnosis, prescription and care plan. Nothing on any
+  Happy Health page prices, meters or tiers programmatic access. Access to the integration
+  surface the company markets to clinical-trial sponsors and provider groups is arranged
+  through a "Request a Demo" conversation, with no published rate card.
+product_pricing:
+  - name: Self-Pay
+    price: 396
+    list_price: 499
+    currency: USD
+    period: one-time
+    includes: >-
+      Up to 5 nights at-home sleep testing, free shipping both ways, virtual visits with a
+      board-certified sleep doctor, diagnosis, prescription and personalized care plan.
+    financing: 6-12 interest-free payments, as low as ~$33/mo, subject to approval.
+  - name: Use My Insurance
+    price: null
+    currency: USD
+    period: one-time
+    includes: Same clinical package; billed to insurance.
+    note: '$0 due today; copay determined at insurance verification. Credit card required.'

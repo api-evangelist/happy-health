@@ -1,7 +1,18 @@
 aid: happy-health
 name: Happy Health
-description: 'Happy Health is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Happy Health, Inc. is an Austin, Texas digital health company behind the Happy Ring — an
+  FDA-cleared, clinical-grade smart ring — and Happy Sleep, its at-home sleep-testing and
+  sleep-apnea care service. The ring passively measures brain and body biomarkers using four
+  LEDs, four electrodes, a three-axis accelerometer and two temperature sensors, capturing
+  electrodermal activity, blood oxygen, pulse rate, heart-rate variability, respiratory rate,
+  peripheral skin temperature and movement, and streams them over Bluetooth to the Happy Sleep
+  app for clinician and researcher review. The company markets the platform to clinical-trial
+  sponsors, provider groups and researchers with claims of cloud integration, an available SDK,
+  eClinical/EDC and EHR integration, and SMART on FHIR interoperability — but publishes no
+  public developer portal, API reference, SDK package or machine-readable specification, so
+  none of that integration surface is reachable or evaluable without a sales conversation.
+image: https://cdn.prod.website-files.com/66e82d3d92a4258c329c7664/670e1e48919ef3c2db43f90d_256x256.png
 url: https://raw.githubusercontent.com/api-evangelist/happy-health/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +23,15 @@ created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Health
+- Healthcare
+- Digital Health
+- Wearables
+- Remote Patient Monitoring
+- Sleep
+- Medical Devices
+- Clinical Trials
+- Consumer Health
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Conformance
+  url: conformance/happy-health-conformance.yml
+- type: Compliance
+  url: conformance/happy-health-conformance.yml
+- type: LLMsTxt
+  url: llms/happy-health-llms.txt
+- type: DomainSecurity
+  url: security/happy-health-domain-security.yml
 - type: Website
+  url: https://www.happysleep.com/
+- type: Support
+  url: https://support.happysleep.com/
+- type: Pricing
+  url: https://www.happysleep.com/select-billing-method
+- type: SignUp
+  url: https://www.happysleep.com/select-billing-method
+- type: TermsOfService
+  url: https://www.happysleep.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.happysleep.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/happy-health
+- type: LinkedIn
+  url: https://www.linkedin.com/company/happyhealthinc/
+- type: SecondaryMarket
   url: https://forgeglobal.com/happy-health_stock/
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Happy Health's own technology page advertises "Cloud integration and SDK available" and
+    SMART on FHIR data exchange, and the Happy Ring clinical microsite advertises eClinical/EDC
+    and EHR integration, but there is no developer site to read — docs., developer. and portal.
+    happysleep.com are wildcard catch-alls that 302 into the consumer checkout funnel, the
+    api.happysleep.com origin returns 403 AccessDenied on every path, and the only route to the
+    integration surface is a "Request a Demo" form.
+  evidence:
+    - url: https://www.happysleep.com/tech
+      status: 200
+    - url: https://developer.happysleep.com/docs
+      status: 302
+    - url: https://api.happysleep.com/openapi.json
+      status: 403
+    - url: https://happyring.fiftyseven.co/clinical-trials.html
+      status: 200
+    - url: https://www.happysleep.com/.well-known/agent-card.json
+      status: 404
+  checked: '2026-08-22'

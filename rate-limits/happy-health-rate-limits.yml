@@ -1,0 +1,16 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.happysleep.com/tech
+description: >-
+  No rate limits are published, because no API is published. Searched every public Happy Health
+  surface on 2026-08-22 — www.happysleep.com (including /tech and /partners), the Zendesk help
+  centre, the happyring.fiftyseven.co clinical microsite, and github.com/happy-health — for a
+  developer reference, quota, throttle, burst allowance or rate-limit response header. Nothing
+  documents one, and there is no unauthenticated endpoint to observe headers on:
+  api.happysleep.com returns 403 AccessDenied on every path.
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  Absence here is a consequence of there being no published contract, not of an API that
+  documents no limits. Recorded so the zero is legible as measured rather than unchecked.

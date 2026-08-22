@@ -1,0 +1,111 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.happysleep.com/tech
+description: >-
+  Standards and regulatory claims Happy Health, Inc. publishes on its own site. Every entry
+  below is a claim made on a public Happy Health page — none of it could be verified against
+  a machine-readable contract, because the company publishes no OpenAPI, no FHIR
+  CapabilityStatement, no SMART configuration document and no developer reference. The
+  SMART on FHIR entry is therefore recorded as a stated intent, NOT as a measured
+  conformance: the probe of /.well-known/smart-configuration and the whole /.well-known/
+  surface on every Happy Health host returned nothing (see well-known/).
+standards:
+  - id: fhir
+    name: HL7 FHIR / SMART on FHIR
+    conforms: false
+    claimed: true
+    evidence:
+      quote: >-
+        "Built with industry standards — Follows SMART on FHIR interoperability standards so
+        users can transmit, share, and download their health data."
+      url: https://www.happysleep.com/tech
+      probe: >-
+        No SMART configuration, CapabilityStatement, FHIR base URL or OAuth metadata is
+        published on any Happy Health host; /.well-known/* returns 404 on
+        www.happysleep.com and support.happysleep.com, 403 on api.happysleep.com, and an
+        SPA shell on app.happysleep.com.
+    note: >-
+      Domain standard for this market (health data exchange). Claimed in prose only; no
+      contract declares it, so it does not qualify as a measured domain-standard signature.
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    claimed: false
+    evidence:
+      probe: >-
+        SMART on FHIR implies OAuth 2.0 authorization, and press coverage of the Happy Ring
+        platform describes OAuth 2.0 partner connections, but no authorization-server
+        metadata, scope reference or auth documentation is published. Recorded as unverified.
+  - id: hipaa
+    name: HIPAA
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Follows HIPAA, NIST, COPPA, GDPR, and CCPA guidelines."'
+      url: https://www.happysleep.com/tech
+  - id: 21-cfr-part-11
+    name: FDA 21 CFR Part 11 (electronic records and signatures)
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Built to be 21 CFR part 11 compliant."'
+      url: https://www.happysleep.com/tech
+  - id: gdpr
+    name: GDPR
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Follows HIPAA, NIST, COPPA, GDPR, and CCPA guidelines."'
+      url: https://www.happysleep.com/tech
+  - id: ccpa
+    name: CCPA / consumer health data privacy
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Follows HIPAA, NIST, COPPA, GDPR, and CCPA guidelines."'
+      url: https://www.happysleep.com/tech
+      supporting: https://www.happysleep.com/consumer-health-data-privacy-policy
+  - id: coppa
+    name: COPPA
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Follows HIPAA, NIST, COPPA, GDPR, and CCPA guidelines."'
+      url: https://www.happysleep.com/tech
+  - id: nist
+    name: NIST cybersecurity guidance
+    conforms: true
+    claimed: true
+    evidence:
+      quote: '"Follows HIPAA, NIST, COPPA, GDPR, and CCPA guidelines."'
+      url: https://www.happysleep.com/tech
+  - id: fda-510k
+    name: FDA 510(k) clearance (Happy Ring, wearable medical device)
+    conforms: true
+    claimed: true
+    evidence:
+      quote: >-
+        "Meet the most capable and comfortable FDA-approved home sleep test - ever."
+        Clearance announced October 2024 for the Happy Ring clinical-grade smart ring.
+      url: https://www.happysleep.com/tech
+      supporting: https://aasm.org/fda-clears-happy-ring-by-happy-health/
+  - id: rfc9457
+    name: RFC 9457 Problem Details
+    conforms: false
+    claimed: false
+    evidence:
+      probe: No published contract to evaluate.
+  - id: openapi
+    name: OpenAPI
+    conforms: false
+    claimed: false
+    evidence:
+      probe: >-
+        /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs,
+        /redoc and /graphql probed on www.happysleep.com, app.happysleep.com,
+        api.happysleep.com, support.happysleep.com and the wildcard docs/developer/portal
+        subdomains. No document parses as OpenAPI or Swagger.
+certifications: []
+note: >-
+  No third-party certification (SOC 2, ISO 27001, HITRUST) is published, and no trust
+  centre exists — probe-security-programs.py returned vdp=none trust=none on 2026-08-22.

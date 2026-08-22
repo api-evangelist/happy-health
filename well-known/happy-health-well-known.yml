@@ -1,0 +1,101 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  Live probes of the /.well-known/ discovery surface on every host Happy Health, Inc.
+  serves — the marketing/product site (www.happysleep.com, plus the apex which 301s to
+  it), the Vercel-hosted application host (app.happysleep.com), the Zendesk help centre
+  (support.happysleep.com) and the CloudFront/S3 host api.happysleep.com. apis.yml
+  carries no apis[] entries and the repo holds no OpenAPI, so there are no additional
+  servers[] hosts to probe.
+description: >-
+  Nothing is served. Two hosts need reading carefully rather than by status code alone:
+  app.happysleep.com is a Next.js single-page app that answers 200 with the same 14,977
+  byte "A better Happy Health is coming soon" HTML shell for EVERY path including every
+  /.well-known/ path, so those 200s are catch-alls and not documents; api.happysleep.com
+  is an S3/CloudFront origin that answers 403 AccessDenied (application/xml) on every
+  path, which is a locked bucket rather than a served discovery surface. No WellKnown,
+  SecurityTxt or APICatalog pointer is emitted, because no path returned a real document.
+hosts:
+  - host: https://www.happysleep.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /robots.txt
+        status: 200
+        note: served but zero bytes
+  - host: https://app.happysleep.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/openid-configuration
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/api-catalog
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/agent-card.json
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+      - path: /.well-known/agent.json
+        status: 200
+        note: SPA catch-all HTML shell, not a document
+  - host: https://api.happysleep.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/openid-configuration
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/api-catalog
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/agent-card.json
+        status: 403
+        note: S3 AccessDenied XML on every path
+      - path: /.well-known/agent.json
+        status: 403
+        note: S3 AccessDenied XML on every path
+  - host: https://support.happysleep.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404

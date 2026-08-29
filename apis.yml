@@ -12,6 +12,17 @@ description: >-
   eClinical/EDC and EHR integration, and SMART on FHIR interoperability — but publishes no
   public developer portal, API reference, SDK package or machine-readable specification, so
   none of that integration surface is reachable or evaluable without a sales conversation.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/66e82d3d92a4258c329c7664/670e1e48919ef3c2db43f90d_256x256.png
 url: https://raw.githubusercontent.com/api-evangelist/happy-health/refs/heads/main/apis.yml
 x-type: company

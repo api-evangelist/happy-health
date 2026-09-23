@@ -1,0 +1,26 @@
+# Front Door AI Index — happy-health — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: happy-health
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.happysleep.com
+  final_host: happysleep.com
+  ownership: own
+  owner: happy-health
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 2
+  host_score: 2
+  density: 0.77
+  words: 2586
+  tiers:
+    agentic: 0
+    core: 2
+    model: 0
+  ambiguous: 1
+  top_terms:
+    AI: 2
+    smart: 1
